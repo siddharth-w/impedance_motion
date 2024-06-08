@@ -13,11 +13,11 @@ class Manipulator:
         p.setRealTimeSimulation(True)
 
         self.planeID = p.loadURDF("plane.urdf")
-        self.arm_urdfpath = "/home/udayan/Documents/Impedance_Control_Codes/ur5-robotiq-140/urdf/ur5_robotiq_140.urdf"
+        self.arm_urdfpath = "/../model/ur5-robotiq-140/urdf/ur5_robotiq_140.urdf"
         self.arm = p.loadURDF(self.arm_urdfpath,useFixedBase= True,basePosition=[0,0,0])
-        self.tablepath = "/home/udayan/Documents/Impedance_Control_Codes/Special_Task_Space_Impedance Control/table.urdf"
+        self.tablepath = "/../model/ur5-robotiq-140/urdf/objects/table.urdf"
         self.table = p.loadURDF(self.tablepath,useFixedBase=True, basePosition=[0.5,0.4,0.7])
-        self.block = p.loadURDF("/home/udayan/Documents/Impedance_Control_Codes/ur5-robotiq-140/urdf/objects/cube.urdf",useFixedBase=False, basePosition=[0.35,0.439,0.73], baseOrientation = [0,0,1,0] )
+        self.block = p.loadURDF("/../model/ur5-robotiq-140/urdf/objects/block.urdf",useFixedBase=False, basePosition=[0.35,0.439,0.73], baseOrientation = [0,0,1,0] )
 
         #self.table = p.loadURDF(self.tablepath,useFixedBase=True,basePosition=[0.5,0.4,0.7],baseOrientation = [0.01,0.1,0.2,-0.5])
         p.enableJointForceTorqueSensor(self.arm, 8, True)
